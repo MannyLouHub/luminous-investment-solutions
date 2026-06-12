@@ -1,53 +1,11 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
-import Script from 'next/script'
-
-const TURNSTILE_SITE_KEY = '0x4AAAAAADjfaD3VUPYV_8Kr'
-
-declare global {
-  interface Window {
-    turnstile?: {
-      render: (el: HTMLElement, opts: Record<string, unknown>) => string
-      remove: (id: string) => void
-      reset: (id: string) => void
-    }
-  }
-}
+import { useState } from 'react'
 
 type FormState = 'idle' | 'submitting' | 'success' | 'error'
 
 export function ContactForm() {
   const [state, setState] = useState<FormState>('idle')
-  const turnstileRef = useRef<HTMLDivElement>(null)
-  const widgetId = useRef<string | null>(null)
-
-  // Explicitly render the Turnstile widget once its script is available.
-  // Auto-render only fires on first script load, so it misses the widget when
-  // the contact page is reached via client-side navigation (re-mount). Polling
-  // for window.turnstile covers both first load and every subsequent re-mount.
-  useEffect(() => {
-    let cancelled = false
-    function tryRender() {
-      if (cancelled) return
-      if (window.turnstile && turnstileRef.current && widgetId.current === null) {
-        widgetId.current = window.turnstile.render(turnstileRef.current, {
-          sitekey: TURNSTILE_SITE_KEY,
-          theme: 'auto',
-        })
-      } else if (!window.turnstile) {
-        setTimeout(tryRender, 150)
-      }
-    }
-    tryRender()
-    return () => {
-      cancelled = true
-      if (widgetId.current && window.turnstile) {
-        try { window.turnstile.remove(widgetId.current) } catch {}
-        widgetId.current = null
-      }
-    }
-  }, [])
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -69,21 +27,15 @@ export function ContactForm() {
       }
     } catch {
       setState('error')
-    } finally {
-      // Tokens are single-use — reset so a follow-up submission can be verified.
-      if (widgetId.current && window.turnstile) {
-        window.turnstile.reset(widgetId.current)
-      }
     }
   }
 
   return (
-    <>
-    <Script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" strategy="afterInteractive" />
     <form onSubmit={handleSubmit} className="space-y-5">
       <input type="hidden" name="access_key" value="c136eb1e-d3cc-4f9e-9792-d6dd154d28dd" />
       <input type="hidden" name="subject" value="New investor inquiry — Luminous Investment Solutions" />
       <input type="hidden" name="redirect" value="false" />
+      {/* Honeypot — Web3Forms silently drops any submission where this is filled. */}
       <input type="checkbox" name="botcheck" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
 
       <div className="grid grid-cols-2 gap-4">
@@ -197,8 +149,6 @@ export function ContactForm() {
         </div>
       )}
 
-      <div ref={turnstileRef} />
-
       <button
         type="submit"
         disabled={state === 'submitting'}
@@ -207,6 +157,5 @@ export function ContactForm() {
         {state === 'submitting' ? 'Sending…' : 'Send message'}
       </button>
     </form>
-    </>
   )
 }
