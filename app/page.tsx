@@ -49,7 +49,7 @@ export default function Home() {
       <section className="relative min-h-screen flex flex-col justify-center overflow-hidden">
         {/* Background photo */}
         <Image
-          src="/images/hero-pittsburgh.jpg"
+          src="/images/hero.jpg"
           alt=""
           fill
           className="object-cover object-center"
@@ -245,7 +245,7 @@ export default function Home() {
                     {post.excerpt}
                   </p>
                   <p className="text-xs text-navy-400 dark:text-navy-600 mt-4">
-                    {new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} · {post.readTime} read
+                    {new Date(post.date + 'T00:00:00').toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} · {post.readTime} read
                   </p>
                 </Link>
               ))}

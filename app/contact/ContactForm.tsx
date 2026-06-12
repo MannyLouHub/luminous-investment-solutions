@@ -1,12 +1,53 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Script from 'next/script'
+
+const TURNSTILE_SITE_KEY = '0x4AAAAAADjfaD3VUPYV_8Kr'
+
+declare global {
+  interface Window {
+    turnstile?: {
+      render: (el: HTMLElement, opts: Record<string, unknown>) => string
+      remove: (id: string) => void
+      reset: (id: string) => void
+    }
+  }
+}
 
 type FormState = 'idle' | 'submitting' | 'success' | 'error'
 
 export function ContactForm() {
   const [state, setState] = useState<FormState>('idle')
+  const turnstileRef = useRef<HTMLDivElement>(null)
+  const widgetId = useRef<string | null>(null)
+
+  // Explicitly render the Turnstile widget once its script is available.
+  // Auto-render only fires on first script load, so it misses the widget when
+  // the contact page is reached via client-side navigation (re-mount). Polling
+  // for window.turnstile covers both first load and every subsequent re-mount.
+  useEffect(() => {
+    let cancelled = false
+    function tryRender() {
+      if (cancelled) return
+      if (window.turnstile && turnstileRef.current && widgetId.current === null) {
+        widgetId.current = window.turnstile.render(turnstileRef.current, {
+          sitekey: TURNSTILE_SITE_KEY,
+          theme: 'auto',
+        })
+      } else if (!window.turnstile) {
+        setTimeout(tryRender, 150)
+      }
+    }
+    tryRender()
+    return () => {
+      cancelled = true
+      if (widgetId.current && window.turnstile) {
+        try { window.turnstile.remove(widgetId.current) } catch {}
+        widgetId.current = null
+      }
+    }
+  }, [])
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -28,12 +69,17 @@ export function ContactForm() {
       }
     } catch {
       setState('error')
+    } finally {
+      // Tokens are single-use — reset so a follow-up submission can be verified.
+      if (widgetId.current && window.turnstile) {
+        window.turnstile.reset(widgetId.current)
+      }
     }
   }
 
   return (
     <>
-    <Script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer />
+    <Script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" strategy="afterInteractive" />
     <form onSubmit={handleSubmit} className="space-y-5">
       <input type="hidden" name="access_key" value="2c014c59-f530-4496-85ce-9ccbfd1a40c1" />
       <input type="hidden" name="subject" value="New investor inquiry — Luminous Investment Solutions" />
@@ -51,7 +97,7 @@ export function ContactForm() {
             type="text"
             required
             className="w-full px-3 py-2.5 rounded-lg border border-sage-200 dark:border-navy-700 bg-white dark:bg-navy-900 text-navy-950 dark:text-white text-sm placeholder-navy-300 dark:placeholder-navy-600 focus:outline-none focus:border-gold-500 dark:focus:border-gold-500 transition-colors"
-            placeholder="Emmanuel"
+            placeholder="John"
           />
         </div>
         <div>
@@ -64,7 +110,7 @@ export function ContactForm() {
             type="text"
             required
             className="w-full px-3 py-2.5 rounded-lg border border-sage-200 dark:border-navy-700 bg-white dark:bg-navy-900 text-navy-950 dark:text-white text-sm placeholder-navy-300 dark:placeholder-navy-600 focus:outline-none focus:border-gold-500 dark:focus:border-gold-500 transition-colors"
-            placeholder="Louison"
+            placeholder="Doe"
           />
         </div>
       </div>
@@ -151,7 +197,7 @@ export function ContactForm() {
         </div>
       )}
 
-      <div className="cf-turnstile" data-sitekey="0x4AAAAAADjfaD3VUPYV_8Kr" data-theme="auto" />
+      <div ref={turnstileRef} />
 
       <button
         type="submit"

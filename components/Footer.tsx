@@ -9,7 +9,7 @@ export function Footer() {
             <p className="text-sm font-semibold tracking-widest uppercase text-navy-950 dark:text-white mb-1">Luminous</p>
             <p className="text-xs tracking-wider uppercase text-navy-500 dark:text-navy-400 mb-3">Investment Solutions</p>
             <p className="text-sm text-navy-600 dark:text-navy-400 leading-relaxed">
-              Illuminating the path to financial prosperity through strategic multifamily real estate investing in Pittsburgh.
+              Illuminating the path to financial prosperity through strategic real estate lending and multifamily investing across Pennsylvania.
             </p>
           </div>
 
@@ -53,7 +53,7 @@ export function Footer() {
             &copy; {new Date().getFullYear()} Luminous Investment Solutions. All rights reserved.
           </p>
           <p className="text-xs text-navy-400 dark:text-navy-600">
-            Pittsburgh, PA
+            Pennsylvania
           </p>
         </div>
       </div>

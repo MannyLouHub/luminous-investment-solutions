@@ -43,7 +43,7 @@ export default async function BlogPost({ params }: Props) {
         <div className="flex items-center gap-3 text-sm text-navy-400 dark:text-navy-500">
           <span>{post.author}</span>
           <span>·</span>
-          <span>{new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+          <span>{new Date(post.date + 'T00:00:00').toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
           <span>·</span>
           <span>{post.readTime} read</span>
         </div>

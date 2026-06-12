@@ -45,7 +45,7 @@ export default function Blog() {
               </div>
               <div className="flex items-center justify-between mt-5 pt-4 border-t border-sage-200 dark:border-navy-800">
                 <p className="text-xs text-navy-400 dark:text-navy-600">
-                  {new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
+                  {new Date(post.date + 'T00:00:00').toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
                 </p>
                 <p className="text-xs text-navy-400 dark:text-navy-600">{post.readTime} read</p>
               </div>

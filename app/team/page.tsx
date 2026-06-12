@@ -41,15 +41,15 @@ const advisors = [
     name: 'Zachary Gaboury',
     role: 'Operator & Partner',
     image: '/images/team/zach.jpg',
-    company: 'Pittsburgh Operations',
-    bio: 'Pittsburgh operator and contractor managing 80+ multifamily units with goals to reach 200+. Brings boots-on-the-ground deal flow and construction expertise to every acquisition.',
+    company: 'Pennsylvania Operations',
+    bio: 'Pennsylvania operator and contractor managing 80+ multifamily units with goals to reach 200+. Brings boots-on-the-ground deal flow and construction expertise to every acquisition.',
   },
   {
     name: 'Jeffrey Bell',
     role: 'Operator & Partner',
     image: '/images/team/jeff.jpg',
     company: 'Luxe Haven Homes',
-    bio: 'Pittsburgh-based property owner and manager with 200+ units across Pennsylvania. Owner of Luxe Haven Homes, providing deep local market expertise and full-service property management.',
+    bio: 'Pennsylvania-based property owner and manager with 200+ units across the state. Owner of Luxe Haven Homes, providing deep local market expertise and full-service property management.',
   },
   {
     name: 'Michael Blank',

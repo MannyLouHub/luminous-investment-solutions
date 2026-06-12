@@ -3,10 +3,10 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Projects',
-  description: 'Active and past multifamily real estate deals from Luminous Investment Solutions — focused on Pittsburgh\'s inner-ring submarkets.',
+  description: 'Active and past multifamily real estate deals and lending from Luminous Investment Solutions — focused on income-producing real estate across Pennsylvania.',
 }
 
-const pittsburghProjects = [
+const pennsylvaniaProjects = [
   {
     name: 'Luminous Steel City Holdings',
     location: 'Southwestern Pennsylvania',
@@ -14,7 +14,6 @@ const pittsburghProjects = [
     status: 'Active',
     acquired: 'May 2026',
     role: 'Owner / Operator',
-    submarket: 'Inner-ring metro',
     metrics: [
       { label: 'Strategy', value: 'Buy & Hold' },
       { label: 'Market occupancy', value: '95.4%' },
@@ -95,7 +94,7 @@ export default function Projects() {
         </p>
       </div>
 
-      {/* Pittsburgh Portfolio */}
+      {/* Pennsylvania Portfolio */}
       <div className="mb-16">
         <div className="flex items-center gap-4 mb-8" data-reveal>
           <div>
@@ -106,7 +105,7 @@ export default function Projects() {
         </div>
 
         <div className="space-y-10">
-          {pittsburghProjects.map(project => (
+          {pennsylvaniaProjects.map(project => (
             <div key={project.name} data-reveal className="rounded-2xl border border-sage-200 dark:border-navy-700 shadow-sm overflow-hidden">
               <div className="bg-navy-950 dark:bg-navy-900 px-6 py-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                 <div>
@@ -297,7 +296,7 @@ export default function Projects() {
       <div className="rounded-2xl bg-navy-950 p-8 md:p-12 text-center" data-reveal>
         <h3 className="text-2xl font-bold text-white mb-3">Interested in future deals?</h3>
         <p className="text-navy-400 mb-6 max-w-md mx-auto">
-          Our investor list gets first access to new Pittsburgh opportunities before they&apos;re publicly listed.
+          Our investor list gets first access to new Pennsylvania opportunities before they&apos;re publicly listed.
         </p>
         <Link
           href="/contact"
