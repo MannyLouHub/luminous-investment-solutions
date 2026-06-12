@@ -81,7 +81,7 @@ export function ContactForm() {
     <>
     <Script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" strategy="afterInteractive" />
     <form onSubmit={handleSubmit} className="space-y-5">
-      <input type="hidden" name="access_key" value="2c014c59-f530-4496-85ce-9ccbfd1a40c1" />
+      <input type="hidden" name="access_key" value="c136eb1e-d3cc-4f9e-9792-d6dd154d28dd" />
       <input type="hidden" name="subject" value="New investor inquiry — Luminous Investment Solutions" />
       <input type="hidden" name="redirect" value="false" />
       <input type="checkbox" name="botcheck" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
