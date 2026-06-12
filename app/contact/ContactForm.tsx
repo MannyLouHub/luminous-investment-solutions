@@ -1,71 +1,20 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
-import Script from 'next/script'
-
-// Web3Forms' shared hCaptcha site key — they verify the token server-side
-// with their own hCaptcha account, so no secret key is needed on our end.
-const HCAPTCHA_SITE_KEY = '50b2fe65-b00b-4b9e-ad62-3ba471098be2'
-
-declare global {
-  interface Window {
-    hcaptcha?: {
-      render: (el: HTMLElement, opts: Record<string, unknown>) => string
-      remove: (id: string) => void
-      reset: (id: string) => void
-    }
-  }
-}
+import { useState } from 'react'
 
 type FormState = 'idle' | 'submitting' | 'success' | 'error'
 
 export function ContactForm() {
   const [state, setState] = useState<FormState>('idle')
   const [errorMsg, setErrorMsg] = useState('')
-  const hcaptchaRef = useRef<HTMLDivElement>(null)
-  const widgetId = useRef<string | null>(null)
-
-  // Render the hCaptcha widget once its script is ready. Explicit rendering
-  // (rather than auto-render) is required so the widget reappears when the
-  // contact page is reached via client-side navigation (component re-mount).
-  useEffect(() => {
-    let cancelled = false
-    function tryRender() {
-      if (cancelled) return
-      if (window.hcaptcha && hcaptchaRef.current && widgetId.current === null) {
-        widgetId.current = window.hcaptcha.render(hcaptchaRef.current, {
-          sitekey: HCAPTCHA_SITE_KEY,
-        })
-      } else if (!window.hcaptcha) {
-        setTimeout(tryRender, 150)
-      }
-    }
-    tryRender()
-    return () => {
-      cancelled = true
-      if (widgetId.current && window.hcaptcha) {
-        try { window.hcaptcha.remove(widgetId.current) } catch {}
-        widgetId.current = null
-      }
-    }
-  }, [])
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
+    setState('submitting')
+    setErrorMsg('')
 
     const form = e.currentTarget
     const data = new FormData(form)
-
-    // hCaptcha injects an h-captcha-response field once solved; block submit
-    // until it's present so we don't round-trip a guaranteed rejection.
-    if (!data.get('h-captcha-response')) {
-      setErrorMsg('Please complete the “I am human” check below.')
-      setState('error')
-      return
-    }
-
-    setState('submitting')
-    setErrorMsg('')
 
     try {
       const res = await fetch('https://api.web3forms.com/submit', {
@@ -84,17 +33,10 @@ export function ContactForm() {
     } catch (err) {
       setErrorMsg(err instanceof Error ? err.message : 'Network error')
       setState('error')
-    } finally {
-      // Tokens are single-use — reset so a follow-up submission can solve again.
-      if (widgetId.current && window.hcaptcha) {
-        window.hcaptcha.reset(widgetId.current)
-      }
     }
   }
 
   return (
-    <>
-    <Script src="https://js.hcaptcha.com/1/api.js?render=explicit" strategy="afterInteractive" />
     <form onSubmit={handleSubmit} className="space-y-5">
       <input type="hidden" name="access_key" value="c136eb1e-d3cc-4f9e-9792-d6dd154d28dd" />
       <input type="hidden" name="subject" value="New investor inquiry — Luminous Investment Solutions" />
@@ -214,8 +156,6 @@ export function ContactForm() {
         </div>
       )}
 
-      <div ref={hcaptchaRef} />
-
       <button
         type="submit"
         disabled={state === 'submitting'}
@@ -224,6 +164,5 @@ export function ContactForm() {
         {state === 'submitting' ? 'Sending…' : 'Send message'}
       </button>
     </form>
-    </>
   )
 }
