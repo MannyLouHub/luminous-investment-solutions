@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Script from 'next/script'
 
 type FormState = 'idle' | 'submitting' | 'success' | 'error'
 
@@ -31,10 +32,13 @@ export function ContactForm() {
   }
 
   return (
+    <>
+    <Script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer />
     <form onSubmit={handleSubmit} className="space-y-5">
-      <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY" />
+      <input type="hidden" name="access_key" value="2c014c59-f530-4496-85ce-9ccbfd1a40c1" />
       <input type="hidden" name="subject" value="New investor inquiry — Luminous Investment Solutions" />
       <input type="hidden" name="redirect" value="false" />
+      <input type="checkbox" name="botcheck" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
 
       <div className="grid grid-cols-2 gap-4">
         <div>
@@ -147,6 +151,8 @@ export function ContactForm() {
         </div>
       )}
 
+      <div className="cf-turnstile" data-sitekey="0x4AAAAAADjfaD3VUPYV_8Kr" data-theme="auto" />
+
       <button
         type="submit"
         disabled={state === 'submitting'}
@@ -155,5 +161,6 @@ export function ContactForm() {
         {state === 'submitting' ? 'Sending…' : 'Send message'}
       </button>
     </form>
+    </>
   )
 }
