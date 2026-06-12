@@ -21,13 +21,13 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://luminousinvestmentsolutions.com',
     siteName: 'Luminous Investment Solutions',
-    images: [{ url: '/images/logo-mark-gold.png', width: 442, height: 442, alt: 'Luminous Investment Solutions' }],
+    images: [{ url: '/images/og-cover.jpg', width: 1200, height: 630, alt: 'Luminous Investment Solutions — Your beacon in the investment world' }],
   },
   twitter: {
-    card: 'summary',
+    card: 'summary_large_image',
     title: 'Luminous Investment Solutions',
     description: 'Real estate lending and rental investments across Pennsylvania. Your beacon in the investment world.',
-    images: ['/images/logo-mark-gold.png'],
+    images: ['/images/og-cover.jpg'],
   },
 }
 
