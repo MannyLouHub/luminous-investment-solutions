@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export function Footer() {
   return (
-    <footer className="border-t border-navy-100 dark:border-navy-800 bg-white dark:bg-navy-950">
+    <footer className="border-t border-sage-200 dark:border-navy-700 bg-sage dark:bg-navy-950">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
           <div>
@@ -48,7 +48,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-navy-100 dark:border-navy-800 pt-6 flex flex-col sm:flex-row justify-between items-center gap-2">
+        <div className="border-t border-sage-200 dark:border-navy-700 pt-6 flex flex-col sm:flex-row justify-between items-center gap-2">
           <p className="text-xs text-navy-400 dark:text-navy-600">
             &copy; {new Date().getFullYear()} Luminous Investment Solutions. All rights reserved.
           </p>

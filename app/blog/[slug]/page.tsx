@@ -34,7 +34,7 @@ export default async function BlogPost({ params }: Props) {
       </Link>
 
       <header className="mb-10">
-        <span className="text-xs font-medium px-2 py-1 rounded-full bg-navy-50 dark:bg-navy-800 text-navy-500 dark:text-navy-400">
+        <span className="text-xs font-medium px-2 py-1 rounded-full bg-olive dark:bg-navy-800 text-navy-700 dark:text-navy-400">
           {post.category}
         </span>
         <h1 className="text-3xl md:text-4xl font-bold text-navy-950 dark:text-white mt-4 mb-4 leading-tight">
@@ -53,7 +53,7 @@ export default async function BlogPost({ params }: Props) {
         <MDXRemote source={post.content} />
       </div>
 
-      <div className="mt-16 pt-10 border-t border-navy-100 dark:border-navy-800">
+      <div className="mt-16 pt-10 border-t border-sage-200 dark:border-navy-800">
         <p className="text-sm font-semibold text-navy-950 dark:text-white mb-2">Interested in investing?</p>
         <p className="text-sm text-navy-500 dark:text-navy-400 mb-4">
           We&apos;re always looking for aligned investors to grow with us.
