@@ -6,10 +6,12 @@ type FormState = 'idle' | 'submitting' | 'success' | 'error'
 
 export function ContactForm() {
   const [state, setState] = useState<FormState>('idle')
+  const [errorMsg, setErrorMsg] = useState('')
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
     setState('submitting')
+    setErrorMsg('')
 
     const form = e.currentTarget
     const data = new FormData(form)
@@ -19,13 +21,16 @@ export function ContactForm() {
         method: 'POST',
         body: data,
       })
-      if (res.ok) {
+      const result = await res.json().catch(() => ({}))
+      if (res.ok && result.success) {
         setState('success')
         form.reset()
       } else {
+        setErrorMsg(result.message || `Request failed (${res.status})`)
         setState('error')
       }
-    } catch {
+    } catch (err) {
+      setErrorMsg(err instanceof Error ? err.message : 'Network error')
       setState('error')
     }
   }
@@ -146,6 +151,7 @@ export function ContactForm() {
       {state === 'error' && (
         <div className="rounded-lg bg-red-50 dark:bg-red-950 border border-red-200 dark:border-red-800 px-4 py-3">
           <p className="text-sm text-red-700 dark:text-red-300">Something went wrong. Please try again or email us directly.</p>
+          {errorMsg && <p className="mt-1 text-xs text-red-600 dark:text-red-400">Details: {errorMsg}</p>}
         </div>
       )}
 
