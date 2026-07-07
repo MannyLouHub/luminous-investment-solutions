@@ -64,8 +64,8 @@ export default function Team() {
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 py-20">
       <div className="mb-16" data-reveal>
-        <p className="text-xs font-semibold tracking-[0.2em] uppercase text-gold-600 dark:text-gold-400 mb-2">The people behind the firm</p>
-        <h1 className="text-4xl font-bold text-navy-950 dark:text-white mb-4">Our team</h1>
+        <p className="text-xs font-semibold tracking-[0.2em] uppercase text-gold-600 dark:text-golden mb-2">The people behind the firm</p>
+        <h1 className="text-4xl font-bold text-navy-950 dark:text-beige mb-4">Our team</h1>
         <p className="text-lg text-navy-600 dark:text-navy-400 max-w-2xl leading-relaxed">
           A tight-knit team of founders backed by experienced operators, advisors, and partners who bring decades of real-world real estate expertise.
         </p>
@@ -81,7 +81,7 @@ export default function Team() {
                   <Image src={image} alt={name} width={56} height={56} className="w-full h-full object-cover" />
                 </div>
                 <div>
-                  <p className="font-semibold text-navy-950 dark:text-white">{name}</p>
+                  <p className="font-semibold text-navy-950 dark:text-beige">{name}</p>
                   <p className="text-sm text-gold-600 dark:text-gold-400">{role}</p>
                 </div>
               </div>
@@ -101,7 +101,7 @@ export default function Team() {
                   <Image src={image} alt={name} width={48} height={48} className="w-full h-full object-cover" />
                 </div>
                 <div>
-                  <p className="font-semibold text-navy-950 dark:text-white text-sm">{name}</p>
+                  <p className="font-semibold text-navy-950 dark:text-beige text-sm">{name}</p>
                   <p className="text-xs text-navy-500 dark:text-navy-400">{role} · {company}</p>
                 </div>
               </div>
@@ -113,13 +113,13 @@ export default function Team() {
 
       <div className="mt-16 rounded-2xl bg-white dark:bg-navy-900 shadow-sm border border-sage-200 dark:border-navy-700 p-8 md:p-12" data-reveal>
         <div className="max-w-xl">
-          <h3 className="text-2xl font-bold text-navy-950 dark:text-white mb-3">Work with us</h3>
+          <h3 className="text-2xl font-bold text-navy-950 dark:text-beige mb-3">Work with us</h3>
           <p className="text-navy-600 dark:text-navy-400 mb-6 leading-relaxed">
             Whether you&apos;re an experienced investor looking for passive income or exploring real estate for the first time, we&apos;d love to connect.
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-navy-950 text-white font-medium hover:bg-navy-800 transition-colors dark:bg-gold-500 dark:text-navy-950 dark:hover:bg-gold-400"
+            className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-navy-950 text-white font-medium hover:bg-navy-800 transition-colors dark:bg-gold-500 dark:text-navy-950 dark:hover:bg-burnt"
           >
             Get in touch
           </Link>

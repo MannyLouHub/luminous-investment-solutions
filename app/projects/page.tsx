@@ -87,8 +87,8 @@ export default function Projects() {
 
       {/* Page header */}
       <div className="mb-16" data-reveal>
-        <p className="text-xs font-semibold tracking-[0.2em] uppercase text-gold-600 dark:text-gold-400 mb-2">Our portfolio</p>
-        <h1 className="text-4xl font-bold text-navy-950 dark:text-white mb-4">Projects</h1>
+        <p className="text-xs font-semibold tracking-[0.2em] uppercase text-gold-600 dark:text-golden mb-2">Our portfolio</p>
+        <h1 className="text-4xl font-bold text-navy-950 dark:text-beige mb-4">Projects</h1>
         <p className="text-lg text-navy-600 dark:text-navy-400 max-w-2xl leading-relaxed">
           We focus on income-producing multifamily real estate in Pennsylvania — affordable cost basis, strong occupancy fundamentals, and durable rental demand anchored by major universities and health systems. Every deal we bring to investors has been thoroughly underwritten and stress-tested against real market data.
         </p>
@@ -98,8 +98,8 @@ export default function Projects() {
       <div className="mb-16">
         <div className="flex items-center gap-4 mb-8" data-reveal>
           <div>
-            <p className="text-xs font-semibold tracking-[0.15em] uppercase text-gold-600 dark:text-gold-400 mb-1">Pennsylvania portfolio</p>
-            <h2 className="text-2xl font-bold text-navy-950 dark:text-white">Our Market · Our Deals</h2>
+            <p className="text-xs font-semibold tracking-[0.15em] uppercase text-gold-600 dark:text-golden mb-1">Pennsylvania portfolio</p>
+            <h2 className="text-2xl font-bold text-navy-950 dark:text-beige">Our Market · Our Deals</h2>
           </div>
           <div className="flex-1 h-px bg-sage-200 dark:bg-navy-800 hidden sm:block" />
         </div>
@@ -111,7 +111,7 @@ export default function Projects() {
                 <div>
                   <div className="flex items-center gap-3 mb-1">
                     <h3 className="text-xl font-bold text-white">{project.name}</h3>
-                    <span className="text-xs px-2 py-1 rounded-full bg-gold-500/20 text-gold-400 font-medium">{project.status}</span>
+                    <span className="text-xs px-2 py-1 rounded-full bg-gold-500/20 dark:bg-golden/20 text-gold-400 dark:text-golden font-medium">{project.status}</span>
                   </div>
                   <p className="text-sm text-navy-400">{project.location} · {project.type}</p>
                 </div>
@@ -126,7 +126,7 @@ export default function Projects() {
                   {project.metrics.map(({ label, value }) => (
                     <div key={label} className="bg-olive dark:bg-navy-900/50 rounded-xl p-4">
                       <p className="text-xs text-navy-600 dark:text-navy-500 mb-1">{label}</p>
-                      <p className="text-base font-bold text-navy-950 dark:text-white">{value}</p>
+                      <p className="text-base font-bold text-navy-950 dark:text-beige">{value}</p>
                     </div>
                   ))}
                 </div>
@@ -163,8 +163,8 @@ export default function Projects() {
       <div className="mb-16">
         <div className="flex items-center gap-4 mb-8" data-reveal>
           <div>
-            <p className="text-xs font-semibold tracking-[0.15em] uppercase text-gold-600 dark:text-gold-400 mb-1">Debt investing</p>
-            <h2 className="text-2xl font-bold text-navy-950 dark:text-white">Real Estate Lending</h2>
+            <p className="text-xs font-semibold tracking-[0.15em] uppercase text-gold-600 dark:text-golden mb-1">Debt investing</p>
+            <h2 className="text-2xl font-bold text-navy-950 dark:text-beige">Real Estate Lending</h2>
           </div>
           <div className="flex-1 h-px bg-sage-200 dark:bg-navy-800 hidden sm:block" />
         </div>
@@ -177,7 +177,7 @@ export default function Projects() {
             <div>
               <div className="flex items-center gap-3 mb-1">
                 <h3 className="text-xl font-bold text-white">Real Estate Lending Program</h3>
-                <span className="text-xs px-2 py-1 rounded-full bg-gold-500/20 text-gold-400 font-medium">Active</span>
+                <span className="text-xs px-2 py-1 rounded-full bg-gold-500/20 dark:bg-golden/20 text-gold-400 dark:text-golden font-medium">Active</span>
               </div>
               <p className="text-sm text-navy-400">Luminous Investment Solutions · Fixed Return Debt</p>
             </div>
@@ -192,7 +192,7 @@ export default function Projects() {
               {lendingProgram.metrics.map(({ label, value }) => (
                 <div key={label} className="bg-olive dark:bg-navy-900/50 rounded-xl p-4">
                   <p className="text-xs text-navy-600 dark:text-navy-500 mb-1">{label}</p>
-                  <p className="text-base font-bold text-navy-950 dark:text-white">{value}</p>
+                  <p className="text-base font-bold text-navy-950 dark:text-beige">{value}</p>
                 </div>
               ))}
             </div>
@@ -204,7 +204,7 @@ export default function Projects() {
                   {lendingProgram.terms.map(({ label, value }) => (
                     <div key={label} className="flex justify-between gap-4 text-sm">
                       <dt className="text-navy-500 dark:text-navy-400">{label}</dt>
-                      <dd className="font-medium text-navy-950 dark:text-white text-right">{value}</dd>
+                      <dd className="font-medium text-navy-950 dark:text-beige text-right">{value}</dd>
                     </div>
                   ))}
                 </dl>
@@ -225,7 +225,7 @@ export default function Projects() {
 
             <div className="pt-4 border-t border-sage-200 dark:border-navy-800">
               <p className="text-sm text-navy-600 dark:text-navy-400 leading-relaxed">
-                Minimum investment is <span className="font-semibold text-navy-950 dark:text-white">$25,000</span>. Capital is deployed into property acquisitions and loans to experienced operators — not held idle. Interested in lending with us?{' '}
+                Minimum investment is <span className="font-semibold text-navy-950 dark:text-beige">$25,000</span>. Capital is deployed into property acquisitions and loans to experienced operators — not held idle. Interested in lending with us?{' '}
                 <a href="/contact" className="text-gold-600 dark:text-gold-400 font-medium hover:underline">Get in touch →</a>
               </p>
             </div>
@@ -237,8 +237,8 @@ export default function Projects() {
       <div className="mb-16">
         <div className="flex items-center gap-4 mb-8" data-reveal>
           <div>
-            <p className="text-xs font-semibold tracking-[0.15em] uppercase text-gold-600 dark:text-gold-400 mb-1">Broader exposure</p>
-            <h2 className="text-2xl font-bold text-navy-950 dark:text-white">Other Projects</h2>
+            <p className="text-xs font-semibold tracking-[0.15em] uppercase text-gold-600 dark:text-golden mb-1">Broader exposure</p>
+            <h2 className="text-2xl font-bold text-navy-950 dark:text-beige">Other Projects</h2>
           </div>
           <div className="flex-1 h-px bg-sage-200 dark:bg-navy-800 hidden sm:block" />
         </div>
@@ -253,7 +253,7 @@ export default function Projects() {
                 <div>
                   <div className="flex items-center gap-3 mb-1">
                     <h3 className="text-xl font-bold text-white">{project.name}</h3>
-                    <span className="text-xs px-2 py-1 rounded-full bg-gold-500/20 text-gold-400 font-medium">{project.status}</span>
+                    <span className="text-xs px-2 py-1 rounded-full bg-gold-500/20 dark:bg-golden/20 text-gold-400 dark:text-golden font-medium">{project.status}</span>
                   </div>
                   <p className="text-sm text-navy-400">{project.location} · {project.type}</p>
                 </div>
@@ -268,7 +268,7 @@ export default function Projects() {
                   {project.metrics.map(({ label, value }) => (
                     <div key={label} className="bg-olive dark:bg-navy-900/50 rounded-xl p-4">
                       <p className="text-xs text-navy-600 dark:text-navy-500 mb-1">{label}</p>
-                      <p className="text-base font-bold text-navy-950 dark:text-white">{value}</p>
+                      <p className="text-base font-bold text-navy-950 dark:text-beige">{value}</p>
                     </div>
                   ))}
                 </div>
@@ -300,7 +300,7 @@ export default function Projects() {
         </p>
         <Link
           href="/contact"
-          className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-gold-500 text-navy-950 font-medium hover:bg-gold-400 transition-colors"
+          className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-gold-500 text-navy-950 font-medium hover:bg-gold-400 dark:hover:bg-burnt transition-colors"
         >
           Join the investor list
         </Link>

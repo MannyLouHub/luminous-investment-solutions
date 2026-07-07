@@ -61,7 +61,7 @@ export default function Home() {
         <div aria-hidden className="absolute bottom-0 inset-x-0 h-40 bg-gradient-to-t from-navy-950 to-transparent" />
 
         <div className="relative w-full max-w-6xl mx-auto px-4 sm:px-6 py-36 md:py-48">
-          <p className="hero-in hero-in-1 text-xs font-semibold tracking-[0.25em] uppercase text-gold-400 mb-8">
+          <p className="hero-in hero-in-1 text-xs font-semibold tracking-[0.25em] uppercase text-gold-400 dark:text-golden mb-8">
             Real Estate Lending &amp; Rental Investments
           </p>
 
@@ -82,7 +82,7 @@ export default function Home() {
           <div className="hero-in hero-in-4 flex flex-col sm:flex-row gap-3">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-gold-500 text-navy-950 font-semibold hover:bg-gold-400 transition-colors"
+              className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-gold-500 text-navy-950 font-semibold hover:bg-gold-400 dark:hover:bg-burnt transition-colors"
             >
               Invest with us
             </Link>
@@ -110,7 +110,7 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map(({ value, label }, i) => (
               <div key={label} data-reveal data-delay={String(i + 1)}>
-                <p className="text-2xl md:text-3xl font-bold text-gold-400 mb-1">{value}</p>
+                <p className="text-2xl md:text-3xl font-bold text-gold-400 dark:text-golden mb-1">{value}</p>
                 <p className="text-xs text-navy-400 leading-snug">{label}</p>
               </div>
             ))}
@@ -122,8 +122,8 @@ export default function Home() {
       <section className="bg-sage dark:bg-navy-900/50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-24">
           <div className="mb-14" data-reveal>
-            <p className="text-xs font-semibold tracking-[0.2em] uppercase text-gold-600 dark:text-gold-400 mb-2">What we do</p>
-            <h2 className="text-3xl font-bold text-navy-950 dark:text-white">How we invest</h2>
+            <p className="text-xs font-semibold tracking-[0.2em] uppercase text-gold-600 dark:text-golden mb-2">What we do</p>
+            <h2 className="text-3xl font-bold text-navy-950 dark:text-beige">How we invest</h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {pillars.map(({ title, body, icon }, i) => (
@@ -133,10 +133,10 @@ export default function Home() {
                 data-delay={String(i + 1)}
                 className="bg-white dark:bg-navy-900 shadow-sm rounded-2xl p-8 border border-sage-200 dark:border-navy-700"
               >
-                <div className="w-12 h-12 rounded-xl bg-olive dark:bg-navy-800 flex items-center justify-center text-gold-700 dark:text-gold-400 mb-5">
+                <div className="w-12 h-12 rounded-xl bg-olive dark:bg-navy-800 flex items-center justify-center text-gold-700 dark:text-golden mb-5">
                   {icon}
                 </div>
-                <h3 className="text-lg font-semibold text-navy-950 dark:text-white mb-3">{title}</h3>
+                <h3 className="text-lg font-semibold text-navy-950 dark:text-beige mb-3">{title}</h3>
                 <p className="text-sm text-navy-600 dark:text-navy-400 leading-relaxed">{body}</p>
               </div>
             ))}
@@ -149,8 +149,8 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-24">
           <div className="flex items-end justify-between mb-14" data-reveal>
             <div>
-              <p className="text-xs font-semibold tracking-[0.2em] uppercase text-gold-600 dark:text-gold-400 mb-2">Active deals</p>
-              <h2 className="text-3xl font-bold text-navy-950 dark:text-white">Featured projects</h2>
+              <p className="text-xs font-semibold tracking-[0.2em] uppercase text-gold-600 dark:text-golden mb-2">Active deals</p>
+              <h2 className="text-3xl font-bold text-navy-950 dark:text-beige">Featured projects</h2>
             </div>
             <Link href="/projects" className="text-sm font-medium text-gold-600 dark:text-gold-400 hover:underline hidden sm:block">
               All projects →
@@ -161,18 +161,18 @@ export default function Home() {
             <div data-reveal data-delay="1" className="rounded-2xl border border-sage-200 dark:border-navy-700 shadow-sm overflow-hidden">
               <div className="bg-navy-950 dark:bg-navy-900 px-6 py-4 flex items-center justify-between">
                 <p className="text-sm font-semibold text-white">Luminous Steel City Holdings</p>
-                <span className="text-xs px-2 py-1 rounded-full bg-gold-500/20 text-gold-400 font-medium">Active</span>
+                <span className="text-xs px-2 py-1 rounded-full bg-gold-500/20 dark:bg-golden/20 text-gold-400 dark:text-golden font-medium">Active</span>
               </div>
               <div className="p-6 bg-white dark:bg-navy-950">
                 <p className="text-xs text-navy-500 dark:text-navy-400 mb-4">Pennsylvania · Residential Buy &amp; Hold</p>
                 <div className="grid grid-cols-2 gap-4 mb-4">
                   <div>
                     <p className="text-xs text-navy-400 dark:text-navy-500">Market occupancy</p>
-                    <p className="text-lg font-bold text-navy-950 dark:text-white">95.4%</p>
+                    <p className="text-lg font-bold text-navy-950 dark:text-beige">95.4%</p>
                   </div>
                   <div>
                     <p className="text-xs text-navy-400 dark:text-navy-500">Target IRR</p>
-                    <p className="text-lg font-bold text-navy-950 dark:text-white">24–28%</p>
+                    <p className="text-lg font-bold text-navy-950 dark:text-beige">24–28%</p>
                   </div>
                 </div>
                 <p className="text-sm text-navy-600 dark:text-navy-400 leading-relaxed">
@@ -184,18 +184,18 @@ export default function Home() {
             <div data-reveal data-delay="2" className="rounded-2xl border border-sage-200 dark:border-navy-700 shadow-sm overflow-hidden">
               <div className="bg-navy-950 dark:bg-navy-900 px-6 py-4 flex items-center justify-between">
                 <p className="text-sm font-semibold text-white">3 Keys Communities</p>
-                <span className="text-xs px-2 py-1 rounded-full bg-gold-500/20 text-gold-400 font-medium">Passive</span>
+                <span className="text-xs px-2 py-1 rounded-full bg-gold-500/20 dark:bg-golden/20 text-gold-400 dark:text-golden font-medium">Passive</span>
               </div>
               <div className="p-6 bg-white dark:bg-navy-950">
                 <p className="text-xs text-navy-500 dark:text-navy-400 mb-4">Las Vegas, NV · Affordable Housing</p>
                 <div className="grid grid-cols-2 gap-4 mb-4">
                   <div>
                     <p className="text-xs text-navy-400 dark:text-navy-500">Portfolio size</p>
-                    <p className="text-lg font-bold text-navy-950 dark:text-white">233 units</p>
+                    <p className="text-lg font-bold text-navy-950 dark:text-beige">233 units</p>
                   </div>
                   <div>
                     <p className="text-xs text-navy-400 dark:text-navy-500">Projected IRR</p>
-                    <p className="text-lg font-bold text-navy-950 dark:text-white">Up to 23.5%</p>
+                    <p className="text-lg font-bold text-navy-950 dark:text-beige">Up to 23.5%</p>
                   </div>
                 </div>
                 <p className="text-sm text-navy-600 dark:text-navy-400 leading-relaxed">
@@ -219,8 +219,8 @@ export default function Home() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6 py-24">
             <div className="flex items-end justify-between mb-14" data-reveal>
               <div>
-                <p className="text-xs font-semibold tracking-[0.2em] uppercase text-gold-600 dark:text-gold-400 mb-2">Insights</p>
-                <h2 className="text-3xl font-bold text-navy-950 dark:text-white">From the blog</h2>
+                <p className="text-xs font-semibold tracking-[0.2em] uppercase text-gold-600 dark:text-golden mb-2">Insights</p>
+                <h2 className="text-3xl font-bold text-navy-950 dark:text-beige">From the blog</h2>
               </div>
               <Link href="/blog" className="text-sm font-medium text-gold-600 dark:text-gold-400 hover:underline hidden sm:block">
                 All posts →
@@ -233,12 +233,12 @@ export default function Home() {
                   href={`/blog/${post.slug}`}
                   data-reveal
                   data-delay={String(i + 1)}
-                  className="group bg-white dark:bg-navy-900 shadow-sm rounded-2xl p-6 border border-sage-200 dark:border-navy-700 hover:border-gold-500 dark:hover:border-gold-600 transition-colors"
+                  className="group bg-white dark:bg-navy-900 shadow-sm rounded-2xl p-6 border border-sage-200 dark:border-navy-700 hover:border-gold-500 dark:hover:border-burnt transition-colors"
                 >
                   <span className="text-xs font-medium px-2 py-1 rounded-full bg-olive dark:bg-navy-800 text-navy-700 dark:text-navy-400">
                     {post.category}
                   </span>
-                  <h3 className="text-base font-semibold text-navy-950 dark:text-white mt-3 mb-2 group-hover:text-gold-600 dark:group-hover:text-gold-400 transition-colors leading-snug">
+                  <h3 className="text-base font-semibold text-navy-950 dark:text-beige mt-3 mb-2 group-hover:text-gold-600 dark:group-hover:text-burnt transition-colors leading-snug">
                     {post.title}
                   </h3>
                   <p className="text-sm text-navy-500 dark:text-navy-400 line-clamp-2 leading-relaxed">
@@ -258,7 +258,7 @@ export default function Home() {
       <section className="bg-navy-950">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-24 text-center">
           <div data-reveal>
-            <p className="text-xs font-semibold tracking-[0.2em] uppercase text-gold-400 mb-4">Ready to invest?</p>
+            <p className="text-xs font-semibold tracking-[0.2em] uppercase text-gold-400 dark:text-golden mb-4">Ready to invest?</p>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Join a growing community of investors
             </h2>
@@ -268,7 +268,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-gold-500 text-navy-950 font-medium hover:bg-gold-400 transition-colors"
+                className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-gold-500 text-navy-950 font-medium hover:bg-gold-400 dark:hover:bg-burnt transition-colors"
               >
                 Get in touch
               </Link>

@@ -6,7 +6,7 @@ export function Footer() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
           <div>
-            <p className="text-sm font-semibold tracking-widest uppercase text-navy-950 dark:text-white mb-1">Luminous</p>
+            <p className="text-sm font-semibold tracking-widest uppercase text-navy-950 dark:text-beige mb-1">Luminous</p>
             <p className="text-xs tracking-wider uppercase text-navy-500 dark:text-navy-400 mb-3">Investment Solutions</p>
             <p className="text-sm text-navy-600 dark:text-navy-400 leading-relaxed">
               Illuminating the path to financial prosperity through strategic real estate lending and multifamily investing across Pennsylvania.
@@ -24,7 +24,7 @@ export function Footer() {
                 { href: '/contact', label: 'Contact' },
               ].map(({ href, label }) => (
                 <li key={href}>
-                  <Link href={href} className="text-sm text-navy-600 hover:text-gold-600 dark:text-navy-400 dark:hover:text-gold-400 transition-colors">
+                  <Link href={href} className="text-sm text-navy-600 hover:text-gold-600 dark:text-navy-400 dark:hover:text-burnt transition-colors">
                     {label}
                   </Link>
                 </li>
@@ -41,7 +41,7 @@ export function Footer() {
               href="https://manage.kmail-lists.com/subscriptions/subscribe?a=SWf6mJ&g=WNDWpH"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block text-sm font-medium px-4 py-2 rounded-lg border border-gold-500 text-gold-600 hover:bg-gold-500 hover:text-white transition-colors dark:text-gold-400 dark:hover:bg-gold-500 dark:hover:text-navy-950"
+              className="inline-block text-sm font-medium px-4 py-2 rounded-lg border border-gold-500 text-gold-600 hover:bg-gold-500 hover:text-white transition-colors dark:text-gold-400 dark:hover:bg-burnt dark:hover:text-navy-950"
             >
               Join newsletter
             </a>

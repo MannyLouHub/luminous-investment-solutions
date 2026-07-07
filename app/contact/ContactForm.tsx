@@ -54,7 +54,7 @@ export function ContactForm() {
             name="firstName"
             type="text"
             required
-            className="w-full px-3 py-2.5 rounded-lg border border-sage-200 dark:border-navy-700 bg-white dark:bg-navy-900 text-navy-950 dark:text-white text-sm placeholder-navy-300 dark:placeholder-navy-600 focus:outline-none focus:border-gold-500 dark:focus:border-gold-500 transition-colors"
+            className="w-full px-3 py-2.5 rounded-lg border border-sage-200 dark:border-navy-700 bg-white dark:bg-navy-900 text-navy-950 dark:text-beige text-sm placeholder-navy-300 dark:placeholder-navy-600 focus:outline-none focus:border-gold-500 dark:focus:border-gold-500 transition-colors"
             placeholder="John"
           />
         </div>
@@ -67,7 +67,7 @@ export function ContactForm() {
             name="lastName"
             type="text"
             required
-            className="w-full px-3 py-2.5 rounded-lg border border-sage-200 dark:border-navy-700 bg-white dark:bg-navy-900 text-navy-950 dark:text-white text-sm placeholder-navy-300 dark:placeholder-navy-600 focus:outline-none focus:border-gold-500 dark:focus:border-gold-500 transition-colors"
+            className="w-full px-3 py-2.5 rounded-lg border border-sage-200 dark:border-navy-700 bg-white dark:bg-navy-900 text-navy-950 dark:text-beige text-sm placeholder-navy-300 dark:placeholder-navy-600 focus:outline-none focus:border-gold-500 dark:focus:border-gold-500 transition-colors"
             placeholder="Doe"
           />
         </div>
@@ -82,7 +82,7 @@ export function ContactForm() {
           name="email"
           type="email"
           required
-          className="w-full px-3 py-2.5 rounded-lg border border-sage-200 dark:border-navy-700 bg-white dark:bg-navy-900 text-navy-950 dark:text-white text-sm placeholder-navy-300 dark:placeholder-navy-600 focus:outline-none focus:border-gold-500 dark:focus:border-gold-500 transition-colors"
+          className="w-full px-3 py-2.5 rounded-lg border border-sage-200 dark:border-navy-700 bg-white dark:bg-navy-900 text-navy-950 dark:text-beige text-sm placeholder-navy-300 dark:placeholder-navy-600 focus:outline-none focus:border-gold-500 dark:focus:border-gold-500 transition-colors"
           placeholder="you@example.com"
         />
       </div>
@@ -95,7 +95,7 @@ export function ContactForm() {
           id="phone"
           name="phone"
           type="tel"
-          className="w-full px-3 py-2.5 rounded-lg border border-sage-200 dark:border-navy-700 bg-white dark:bg-navy-900 text-navy-950 dark:text-white text-sm placeholder-navy-300 dark:placeholder-navy-600 focus:outline-none focus:border-gold-500 dark:focus:border-gold-500 transition-colors"
+          className="w-full px-3 py-2.5 rounded-lg border border-sage-200 dark:border-navy-700 bg-white dark:bg-navy-900 text-navy-950 dark:text-beige text-sm placeholder-navy-300 dark:placeholder-navy-600 focus:outline-none focus:border-gold-500 dark:focus:border-gold-500 transition-colors"
           placeholder="+1 (412) 555-0100"
         />
       </div>
@@ -107,7 +107,7 @@ export function ContactForm() {
         <select
           id="investorType"
           name="investorType"
-          className="w-full px-3 py-2.5 rounded-lg border border-sage-200 dark:border-navy-700 bg-white dark:bg-navy-900 text-navy-950 dark:text-white text-sm focus:outline-none focus:border-gold-500 dark:focus:border-gold-500 transition-colors"
+          className="w-full px-3 py-2.5 rounded-lg border border-sage-200 dark:border-navy-700 bg-white dark:bg-navy-900 text-navy-950 dark:text-beige text-sm focus:outline-none focus:border-gold-500 dark:focus:border-gold-500 transition-colors"
         >
           <option value="">Select one</option>
           <option value="passive-investor">Passive investor looking for deals</option>
@@ -126,7 +126,7 @@ export function ContactForm() {
           id="message"
           name="message"
           rows={4}
-          className="w-full px-3 py-2.5 rounded-lg border border-sage-200 dark:border-navy-700 bg-white dark:bg-navy-900 text-navy-950 dark:text-white text-sm placeholder-navy-300 dark:placeholder-navy-600 focus:outline-none focus:border-gold-500 dark:focus:border-gold-500 transition-colors resize-none"
+          className="w-full px-3 py-2.5 rounded-lg border border-sage-200 dark:border-navy-700 bg-white dark:bg-navy-900 text-navy-950 dark:text-beige text-sm placeholder-navy-300 dark:placeholder-navy-600 focus:outline-none focus:border-gold-500 dark:focus:border-gold-500 transition-colors resize-none"
           placeholder="Tell us about your investment goals or any questions you have..."
         />
       </div>
@@ -159,7 +159,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={state === 'submitting'}
-        className="w-full py-3 rounded-lg bg-navy-950 text-white font-medium text-sm hover:bg-navy-800 transition-colors dark:bg-gold-500 dark:text-navy-950 dark:hover:bg-gold-400 disabled:opacity-60"
+        className="w-full py-3 rounded-lg bg-navy-950 text-white font-medium text-sm hover:bg-navy-800 transition-colors dark:bg-gold-500 dark:text-navy-950 dark:hover:bg-burnt disabled:opacity-60"
       >
         {state === 'submitting' ? 'Sending…' : 'Send message'}
       </button>

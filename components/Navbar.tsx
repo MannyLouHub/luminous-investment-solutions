@@ -36,7 +36,7 @@ export function Navbar() {
             className="hidden dark:block"
           />
           <div className="leading-tight">
-            <p className="text-sm font-semibold tracking-widest uppercase text-navy-950 dark:text-white">Luminous</p>
+            <p className="text-sm font-semibold tracking-widest uppercase text-navy-950 dark:text-beige">Luminous</p>
             <p className="text-[10px] tracking-wider uppercase text-navy-500 dark:text-navy-400">Investment Solutions</p>
           </div>
         </Link>
@@ -49,7 +49,7 @@ export function Navbar() {
               className={`text-sm font-medium transition-colors ${
                 pathname === href
                   ? 'text-gold-600 dark:text-gold-400'
-                  : 'text-navy-600 hover:text-navy-950 dark:text-navy-300 dark:hover:text-white'
+                  : 'text-navy-600 hover:text-navy-950 dark:text-navy-300 dark:hover:text-beige'
               }`}
             >
               {label}
@@ -61,7 +61,7 @@ export function Navbar() {
           <ThemeToggle />
           <Link
             href="/contact"
-            className="text-sm font-medium px-4 py-2 rounded-lg bg-navy-950 text-white hover:bg-navy-800 transition-colors dark:bg-gold-500 dark:text-navy-950 dark:hover:bg-gold-400"
+            className="text-sm font-medium px-4 py-2 rounded-lg bg-navy-950 text-white hover:bg-navy-800 transition-colors dark:bg-gold-500 dark:text-navy-950 dark:hover:bg-burnt"
           >
             Invest with us
           </Link>
@@ -98,7 +98,7 @@ export function Navbar() {
           <Link
             href="/contact"
             onClick={() => setOpen(false)}
-            className="w-full text-sm font-medium px-4 py-2 rounded-lg bg-navy-950 text-white text-center hover:bg-navy-800 transition-colors dark:bg-gold-500 dark:text-navy-950 dark:hover:bg-gold-400"
+            className="w-full text-sm font-medium px-4 py-2 rounded-lg bg-navy-950 text-white text-center hover:bg-navy-800 transition-colors dark:bg-gold-500 dark:text-navy-950 dark:hover:bg-burnt"
           >
             Invest with us
           </Link>

@@ -26,7 +26,38 @@
   --color-gold-600: #a88a36;
   --color-gold-700: #876d24;
 
+  /* Dark-mode-only palette (referenced exclusively via dark: classes,
+     so light mode is never affected). */
+  --color-beige: #f5e8d8;   /* dark-mode primary text (replaces white) */
+  --color-golden: #daa520;  /* dark-mode supporting accent */
+  --color-burnt: #ff4500;   /* dark-mode hover */
+
   --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* ── Dark-mode reskin: warm charcoal + coral ──────────────────
+   Repoints the shared navy + gold scales to a warm charcoal/coral
+   palette in dark mode only. Scoped to html.dark so light mode is
+   untouched (and the higher specificity wins over @theme's :root).
+   In dark mode the low navy rungs are surfaces/borders and the high
+   rungs are text, so this one block retargets ~150 dark utilities. */
+html.dark {
+  --color-navy-950: #1c1c1c;  /* canvas + on-accent (dark) text */
+  --color-navy-900: #242424;  /* cards */
+  --color-navy-800: #2e2e2e;  /* tiles / hover bg / elevated */
+  --color-navy-700: #3a3a3a;  /* borders */
+  --color-navy-600: #6f6558;  /* dim labels (text-only in dark) */
+  --color-navy-500: #8c8173;  /* muted text */
+  --color-navy-400: #b8ab98;  /* secondary text */
+  --color-navy-300: #d8cdbb;  /* nav inactive text */
+  --color-navy-200: #e9dfcc;  /* mobile-menu text */
+
+  /* coral becomes the default accent (was gold) */
+  --color-gold-300: #ff8a7e;
+  --color-gold-400: #ff6f61;  /* coral — accent text/highlights */
+  --color-gold-500: #ff6f61;  /* coral — accent button bg + badge tint */
+  --color-gold-600: #e85a48;  /* deeper coral — residual borders */
+  --color-gold-700: #d24a3a;
 }
 
 @layer base {
@@ -36,7 +67,7 @@
 
   body {
     @apply bg-sage text-navy-900 transition-colors duration-200;
-    @apply dark:bg-navy-950 dark:text-white;
+    @apply dark:bg-navy-950 dark:text-beige;
   }
 
   ::selection {

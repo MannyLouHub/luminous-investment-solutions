@@ -28,7 +28,7 @@ export default async function BlogPost({ params }: Props) {
     <div className="max-w-3xl mx-auto px-4 sm:px-6 py-20">
       <Link
         href="/blog"
-        className="inline-flex items-center gap-1 text-sm text-navy-500 dark:text-navy-400 hover:text-navy-900 dark:hover:text-white mb-10 transition-colors"
+        className="inline-flex items-center gap-1 text-sm text-navy-500 dark:text-navy-400 hover:text-navy-900 dark:hover:text-beige mb-10 transition-colors"
       >
         ← All posts
       </Link>
@@ -37,7 +37,7 @@ export default async function BlogPost({ params }: Props) {
         <span className="text-xs font-medium px-2 py-1 rounded-full bg-olive dark:bg-navy-800 text-navy-700 dark:text-navy-400">
           {post.category}
         </span>
-        <h1 className="text-3xl md:text-4xl font-bold text-navy-950 dark:text-white mt-4 mb-4 leading-tight">
+        <h1 className="text-3xl md:text-4xl font-bold text-navy-950 dark:text-beige mt-4 mb-4 leading-tight">
           {post.title}
         </h1>
         <div className="flex items-center gap-3 text-sm text-navy-400 dark:text-navy-500">
@@ -54,13 +54,13 @@ export default async function BlogPost({ params }: Props) {
       </div>
 
       <div className="mt-16 pt-10 border-t border-sage-200 dark:border-navy-800">
-        <p className="text-sm font-semibold text-navy-950 dark:text-white mb-2">Interested in investing?</p>
+        <p className="text-sm font-semibold text-navy-950 dark:text-beige mb-2">Interested in investing?</p>
         <p className="text-sm text-navy-500 dark:text-navy-400 mb-4">
           We&apos;re always looking for aligned investors to grow with us.
         </p>
         <Link
           href="/contact"
-          className="inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-navy-950 text-white text-sm font-medium hover:bg-navy-800 transition-colors dark:bg-gold-500 dark:text-navy-950 dark:hover:bg-gold-400"
+          className="inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-navy-950 text-white text-sm font-medium hover:bg-navy-800 transition-colors dark:bg-gold-500 dark:text-navy-950 dark:hover:bg-burnt"
         >
           Get in touch
         </Link>
